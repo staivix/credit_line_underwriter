@@ -4,8 +4,8 @@ import axios from "axios";
 // ==================================================================
 // 📡 STAISIX DYNAMIC SYSTEM DISCOVERY CONFIGURATION
 // ==================================================================
-const GITHUB_TOKEN = "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";
-const AIRTABLE_TOKEN = "patjaULRSPnjizPl3.31760b582bf09d428f67c6df00c3a86b080e3bedea3a9a7f63734165f90ac8b7";
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || "";
+const AIRTABLE_PAT = process.env.AIRTABLE_PAT || "";
 const AIRTABLE_BASE_ID = "appq8GkI2I3WoCUpz";
 const TARGET_TABLE_ID = "tblEETbG01lZH4bby"; // Table 31: AI Systems ID
 

@@ -1,0 +1,30 @@
+name: STAISIX Continuous AI Compliance Gate
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  staisix-compliance-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Codebase Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Installs your fresh cloud engine dynamically on the runner container
+      - name: Install STAISIX Enterprise CLI Tool
+        run: npm install -g https://github.com
+
+      # Triggers your automated zero-trust code scans and text matching checks
+      - name: Run Live Compliance Verification Engine
+        env:
+          AIRTABLE_PAT: ${{ secrets.STAISIX_AIRTABLE_PAT }}
+        run: staisix scan
