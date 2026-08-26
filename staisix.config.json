@@ -1,0 +1,19 @@
+{
+  "organization": "Credit One Bank",
+  "systemProfileID": "SYS-LOAN-001",
+  "aiSystemName": "credit_line_underwriter",
+  "telemetryEngine": {
+    "targetTable": "Table 27: Organization Controls",
+    "identificationMapping": {
+      "stagingControlIdField": "Staging_Control_ID",
+      "statusField": "Scan_Status",
+      "companyField": "Company Name",
+      "emailField": "User Email:"
+    }
+  },
+  "rulesEngine": {
+    "sourceTable": "Table 27: Organization Controls",
+    "filterCriteria": "Unverified Draft",
+    "localTargetDirectory": "./"
+  }
+}

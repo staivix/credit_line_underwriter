@@ -1,0 +1,35 @@
+{
+  "controlId": "STX-CYB-060",
+  "systemProfileID": "SYS-LOAN-001",
+  "remediationTimestamp": "2026-08-25T22:30:00.000Z",
+  "assigned_risk_operators": [
+    {
+      "name": "Constantine",
+      "role": "Lead System Architect",
+      "email": "constantine@staisix.com"
+    }
+  ],
+  "executive_reviewers": [
+    {
+      "name": "Constantine",
+      "email": "constantine@staisix.com"
+    }
+  ],
+  "securityControls": {
+    "sessionTokenEncryption": {
+      "algorithm": "AES-256-GCM",
+      "keyRotationIntervalDays": 30,
+      "status": "Active"
+    },
+    "anomalyDetectionModel": {
+      "framework": "IsolationForest",
+      "falsePositiveThresholdPercent": 0.05,
+      "status": "Active"
+    },
+    "telemetryIngestionGating": {
+      "validationCheck": "StrictSchemaEnforcement",
+      "status": "Active"
+    }
+  },
+  "auditTrailSignature": "OPERATOR-SIG-C1B-CONST-77402X-LIVE"
+}

@@ -1,0 +1,25 @@
+{
+  "control_id": "STX-MDA-002",
+  "system_profile_id": "SYS-LOAN-001",
+  "remediation_timestamp": "2026-08-25T23:25:00.000Z",
+  "assigned_risk_operators": [
+    {
+      "name": "Constantine",
+      "role": "Lead Data Scientist",
+      "email": "constantine@staisix.com"
+    }
+  ],
+  "executive_reviewers": [
+    {
+      "name": "Constantine",
+      "email": "constantine@staisix.com"
+    }
+  ],
+  "drift_monitoring_metrics": {
+    "evaluation_method": "PopulationStabilityIndex",
+    "alert_threshold": 0.2,
+    "current_psi_score": 0.04,
+    "status": "Stable"
+  },
+  "audit_trail_signature": "OPERATOR-SIG-C1B-CONST-99411Z-LIVE"
+}

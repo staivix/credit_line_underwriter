@@ -1,0 +1,7 @@
+{
+  "control_id": "STX-CYB-060",
+  "control_name": "AI Session Hijack Detection",
+  "validation_status": "Passing",
+  "synchronized_at": "2026-08-26T17:06:01.594Z",
+  "operator_signature": "OPERATOR-SIG-C1B-CONST-77402X-LIVE"
+}
