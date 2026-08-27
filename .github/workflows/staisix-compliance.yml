@@ -9,7 +9,26 @@ on:
 jobs:
   staisix-compliance-scan:
     runs-on: ubuntu-latest
+# 🔓 Authorizes the token to read package dependencies securely across private repositories
+    permissions:
+      contents: read
 
+    steps:
+      - name: Checkout Codebase Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install STAISIX Enterprise CLI Tool
+        run: npm install -g https://${{ github.token }}@://github.com
+
+      - name: Run Live Compliance Verification Engine
+        env:
+          AIRTABLE_PAT: ${{ secrets.STAISIX_AIRTABLE_PAT }}
+        run: staisix scan
     steps:
       - name: Checkout Codebase Repository
         uses: actions/checkout@v4
