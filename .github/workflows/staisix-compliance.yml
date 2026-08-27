@@ -14,18 +14,17 @@ jobs:
       contents: read
 
     steps:
-      # 🚀 UPGRADED TO V5: Fully compatible with the modern runtime environment
       - name: Checkout Codebase Repository
         uses: actions/checkout@v5
 
-      # 🚀 UPGRADED TO V5: Fully compatible with the modern runtime environment
       - name: Setup Node.js Runtime
         uses: actions/setup-node@v5
         with:
           node-version: '24'
 
+      # 🔐 SECURE MULTI-REPOS ACCESS: Dynamically pulls your private engine using your encrypted secret token
       - name: Install STAISIX Enterprise CLI Tool
-        run: npm install -g "https://${{ github.token }}@://github.com"
+        run: npm install -g "https://${{ secrets.STAISIX_GITHUB_TOKEN }}@://github.com"
 
       - name: Run Live Compliance Verification Engine
         env:
