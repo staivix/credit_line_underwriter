@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Install STAISIX Enterprise CLI Tool
+            - name: Install STAISIX Enterprise CLI Tool
         run: npm install -g https://${{ github.token }}@://github.com
 
       - name: Run Live Compliance Verification Engine
