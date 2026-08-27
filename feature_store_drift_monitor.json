@@ -1,0 +1,10 @@
+{
+  "control_id": "STX-AVL-029",
+  "status": "VERIFIED_PRODUCTION_RELEASE",
+  "metric_telemetry": {
+    "feature_store_reference": "fs-credit-prod-01",
+    "disparate_impact_ratio": 0.960,
+    "drift_detected": false
+  },
+  "timestamp": "2026-08-19T00:00:00Z"
+}
