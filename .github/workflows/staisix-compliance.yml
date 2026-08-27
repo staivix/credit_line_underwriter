@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js Runtime
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       # Installs your fresh cloud engine dynamically on the runner container
       - name: Install STAISIX Enterprise CLI Tool
