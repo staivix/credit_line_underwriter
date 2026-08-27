@@ -19,11 +19,10 @@ jobs:
         with:
           node-version: '24'
 
-      # Installs your fresh cloud engine dynamically on the runner container
+      # 🔐 Uses GitHub's built-in automatic token to authenticate the private repo install
       - name: Install STAISIX Enterprise CLI Tool
-        run: npm install -g https://github.com
+        run: npm install -g https://${{ github.token }}@://github.com
 
-      # Triggers your automated zero-trust code scans and text matching checks
       - name: Run Live Compliance Verification Engine
         env:
           AIRTABLE_PAT: ${{ secrets.STAISIX_AIRTABLE_PAT }}
