@@ -22,11 +22,12 @@ jobs:
         with:
           node-version: '24'
 
-      # 🔐 SECURE MULTI-REPOS ACCESS: Dynamically pulls your private engine using your encrypted secret token
+      # 📦 Local Project Ingestion: Install the engine directly inside the working runner directory
       - name: Install STAISIX Enterprise CLI Tool
-        run: npm install -g "https://${{ secrets.STAISIX_GITHUB_TOKEN }}@://github.com"
+        run: npm install "https://${{ secrets.STAISIX_GITHUB_TOKEN }}@://github.com"
 
+      # 🚀 Absolute Execution Path: Calls the live script directly out of your local project node module dependencies
       - name: Run Live Compliance Verification Engine
         env:
           AIRTABLE_PAT: ${{ secrets.STAISIX_AIRTABLE_PAT }}
-        run: staisix scan
+        run: npx staisix scan
